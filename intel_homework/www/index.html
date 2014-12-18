@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Blank Hybrid App Project Template</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }                           @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }                                    @viewport { user-zoom: fixed ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+	<link rel="stylesheet" type="text/css" href="css/global.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel = "Shortcut Icon" href="img/math.ico">
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <style type="text/css">
+	#main-game , #result, #share{
+		display: none;
+	}
+	</style>
+</head>
+
+<body onselectstart="return false">
+	<div id="explain-game">
+		<div class="title">你<span>算</span>老几</div>
+		<div class="introduce">
+			<!-- <div class="rule">游戏规则:</div> -->
+			<div class="main-rule">5&nbsp+&nbsp5&nbsp=&nbsp<span>?</span></div>
+			<!-- <ul>
+				<li>1.将计算结果填入输入框中，计时从你填对第一道题开始</li>
+				<li>2.你一开始有15秒钟的时间，每答对一道题，时间会增加一秒</li>
+			</ul> -->
+		</div>
+		<div class="begin">
+			<button class="btn" id="play">开始游戏</button>
+		</div>
+	</div>
+	<div id="main-game">
+		<div class="time-zone">
+			<img src="img/time-pul.png">
+			<span class="time" id="time"></span>
+			<span class="time-fix"> s left</span>
+		</div>
+		<div class="math">
+			<div class="math-container" id="math-container">
+			</div>
+		</div>
+		<div class="answer">
+			<!-- <input type="text" placeholder="填写答案" id="answer"> -->
+			<div class="input" id="answer"></div>
+			<div class="reminder">Your answer...</div>
+		</div>
+		<div id="keyboard">
+			<div class="key" data-num="1">1</div>
+			<div class="key" data-num="2">2</div>
+			<div class="key" data-num="3">3</div>
+			<div class="key" data-num="4">4</div>
+			<div class="key" data-num="5">5</div>
+			<div class="key" data-num="6">6</div>
+			<div class="key" data-num="7">7</div>
+			<div class="key" data-num="8">8</div>
+			<div class="key" data-num="9">9</div>
+			<div class="key" data-num="0">0</div>
+			<div class="key" data-num="-">-</div>
+			<div class="key" data-num="Back">Back</div>
+		</div>
+	</div>
+	<div id="result">
+<!--
+		<div class="share">
+			<img src="img/bg_share.png" alt="share_img" id="share">
+		</div>
+-->
+		<div class="score">
+			<div class="fen">
+				score:&nbsp&nbsp<span id="score"></span>
+			</div>
+			<div class="defeat">
+				你击败了全国<span id="level"></span>%的人~
+			</div>
+		</div>
+		<div class="replay">
+			<button class="btn" id="re_start">再玩儿一次</button>
+			<p style="font-size: 10px; padding: 14px; color: #fff;">@ produced by syslab</p>
+		</div>
+	</div>
+
+	<script src="js/game.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+	(function(){
+
+		var input = $(".input"),
+		    keyboard = $("#keyboard"),
+		    eventName = 'ontouchstart' in document.documentElement ? 'touchstart' : 'click';
+		Game.preDbClick();
+		keyboard.on(eventName,'div',function(){
+
+			var num = $(this).attr('data-num'),
+			    temp = input.text(),
+			    reminder = $('.reminder');
+
+			if(reminder.css('display') === 'block'){reminder.css('display','none')};
+
+			switch (num){
+				case "Back" :
+				    var len = temp.length - 1;
+					temp = temp.slice(0,len);
+					input.text(temp);
+					break;
+				case "-":
+				case "1":
+				case "2":
+				case "3":
+				case "4":
+				case "5":
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+				case "0":
+					temp+=num;
+					input.text(temp);
+					break;
+			}
+		})
+	})();
+	</script>
+    <script src="intelxdk.js"></script>         <!-- phantom library, needed for XDK api calls -->
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls -->
+    <script src="xhr.js"></script>              <!-- phantom library, needed for XDK CORS -->
+
+<!--    <script src="js/app.js"></script>            for your event code, see README and file comments for details -->
+<!--    <script src="js/init-app.js"></script>       for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=39094726" charset="UTF-8"></script>	    
+</body>
+</html>
