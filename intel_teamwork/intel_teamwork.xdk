@@ -5,9 +5,9 @@
       "type": "Blank Project",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "blankproject",
-      "projectGuid": "cc3b5508-9052-44ce-aa82-a2996366adff",
-      "lastModifiedDate": 1418888739304,
-      "creationDate": 1418888739262
+      "projectGuid": "c406a051-5820-4b80-9a1e-9524a4316ca1",
+      "lastModifiedDate": 1418902938234,
+      "creationDate": 1418902473860
     },
     "sourceDirectory": "www",
     "startFile": "index.html",
@@ -58,7 +58,7 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "intel_homework",
+        "appName_": "intel_teamwork",
         "appID_": "xdk.intel.blank.project",
         "appAccess_": "*",
         "icons_": [],
@@ -80,10 +80,11 @@
         "preferences_": {
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "Fullscreen": false
         },
         "isActive_": true,
-        "appName_": "intel_homework",
+        "appName_": "intel_teamwork",
         "appID_": "xdk.intel.blank.project",
         "appAccess_": "*",
         "icons_": [],
@@ -95,7 +96,7 @@
         "crosswalkVersion_": "stable",
         "appVersion_": "0.0.1",
         "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser.",
-        "appAuthor_": "",
+        "appAuthor_": "张兆鑫,徐缓,钱登胜",
         "appVersionCode_": "1"
       },
       "iOS": {
@@ -107,7 +108,7 @@
           "ios-configuration": "adhoc"
         },
         "isActive_": true,
-        "appName_": "intel_homework",
+        "appName_": "intel_teamwork",
         "appID_": "xdk.intel.blank.project",
         "appAccess_": "*",
         "icons_": [],
@@ -129,7 +130,7 @@
           "windows-publisher-id": ""
         },
         "isActive_": true,
-        "appName_": "intel_homework",
+        "appName_": "intel_teamwork",
         "appID_": "xdk.intel.blank.project",
         "appAccess_": "*",
         "icons_": [],
@@ -148,7 +149,7 @@
         "name_": "WindowsPhone8",
         "preferences_": {},
         "isActive_": true,
-        "appName_": "intel_homework",
+        "appName_": "intel_teamwork",
         "appID_": "not.yet.specified",
         "appAccess_": "*",
         "icons_": [],
